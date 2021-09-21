@@ -8,5 +8,10 @@ Go to the project's directory then run
 
 ```bash
 docker build -t discord_chatbot .
-docker run --env TOKEN=<YOUR BOT TOKEN> --net=host discord_chatbot
+docker run -d --restart always --name aibot --env TOKEN=<BOT_TOKEN_HERE> --net=host discord_chatbot
+```
+To stop the bot:
+```
+docker stop aibot
+docker rm aibot
 ```
